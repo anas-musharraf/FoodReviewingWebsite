@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Admin Page</title>
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script type="text/javascript" src="controllers/admin.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/admin.css">
+		<link rel="stylesheet" type="text/css" href="styles/navbar.css">
+	</head>
+
+	<body ng-app="webApp" ng-controller="adminController">
+		<div class="container-fluid centerAlign" id="topOfPageContainer">
+	        <div class="row" id="topOfPageRow">
+	            <a href='/'>
+					<img src="../images/logo.jpg" class="rounded" id="yumLogo" alt="Cinque Terre">
+				</a>
+	            <div class="col-sm-8" id="topOfPageForm">
+	                <form>
+	                    <input type="text" class="btn text-left" placeholder="Search" ng-model="searchForm.query">
+	                    <input type="submit" class="btn btn-outline-success whiteBackground" id="searchButton" value="Search" ng-click="search()">
+	                </form>
+	            </div>
+
+	            <div class="col-sm-2" id="loginSignUp" ng-if="!loggedIn">
+					<a href="/login" class="btn btn-outline-info font2 whiteBackground">Login</a>
+					<a href="/signup" class="btn btn-outline-info font2 whiteBackground">Sign Up</a>
+				</div>
+				<div class="col-sm-2" id="imageIcon" ng-if="loggedIn">
+					<a href="/users/{{user._id}}"><img src="../{{user.image}}" class="icon"></img></a>
+					<a href="/logout" class="btn btn-outline-info font2 whiteBackground">Logout</a>
+				</div>
+			</div>
+		</div>
+		<div class="container centerAlign" id="navigationButtonContainer">
+			<br>
+			<h1 class="font1">Admin Page</h1><br>
+			<div class="btn-group btn-group-lg">
+				<a href="#usersContainer" class="btn btn-outline-primary font2">Users</a>
+				<a href="#restaurantsContainer" class="btn btn-outline-primary font2">Restaurants</a>
+			</div>
+		</div>
+		<div class="container" id="usersContainer">
+			<h2 class="font1">All Users</h2>
+			<div class="media border p-3" ng-repeat="user in allUsers">
+				<div class="user">
+					<img src={{user.image}} alt="dextMePls" class="mr-3 mt-1 rounded-circle images">
+					<div class="mediaBody">
+						<p><a href="/users/{{user._id}}">{{user.email}}</a></p>
+						<p>{{user.name}}</p>
+						<button class="removeButton" ng-click="removeUser(user._id)">Remove User</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="restaurantsContainer">
+			<h2 class="font1">All Restaurants</h2>
+			<div class="media border p-3" ng-repeat="restaurant in allRestaurants">
+				<div class="restaurant">
+					<img src={{restaurant.bannerImage}} alt="dextMePls" class="mr-3 mt-1 rounded-circle images">
+					<div class="mediaBody">
+						<p><a href="/restaurants/{{restaurant._id}}">{{restaurant.name}}</a></p>
+						<button class="removeButton" ng-click="removeRestaurant(restaurant._id)">Remove Restaurant</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

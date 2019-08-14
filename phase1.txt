@@ -1,0 +1,58 @@
+# team11 phase1.txt
+
+Login credentials:
+User:
+email: testUser@gmail.com
+password: csc309
+
+Admin:
+email: testAdmin@gmail.com
+
+Guide On How To Use Pages:
+
+Home Page:
+On the home page, you can search for any restaurant or dish. Once you click
+"Search", you will see the search results. Currently, you can only search for
+and see results for McDonald's, as searching requires queries to a database.
+You can click on any of the restaurants or dishes and be located to the
+restaurant or dish page.(Right now, only one dish page is implemented. Currently, for example,
+all the dishes are directed to the same dish page. In the future, with access to a server, 
+clicking different dishes will be directed their corresponding dish page.
+
+Admin Page:
+You are able to see a list of users, and restaurants on the website.
+As well, you can remove them from the list using the "Remove" button.
+Currently, we only have one restaurant and one user page made. Therefore, when a user link
+is clicked, you go to the same user. This process is identical for the restaurant links. 
+
+Sign Up Page:
+After you fill in and submit the email address and password fields, many other fields will then become visible. 
+A user class is created and pushed to the array. Currently, two users exist, testAdmin@gmail.com, and
+testUser@gmail.com. If you try to sign up with those, you will see a message saying the "User exists".
+
+Restaurant Page:
+On the restaurant page, you can click any dish and be redirected to the dish page.
+You can leave a review of the restaurant by clicking one of the stars to rate it out of 5 and leave a comment. 
+You can also click the "Follow" button to follow the restaurant.
+
+Dish Page:
+You can click "Login" and "Sign up" button on top right. It will direct the user to "Login" page and "Sign up" page. By clicking on the restaurant name, for example "McDonald's", user will be redirected to McDonald's Restaurant Page. Star rating of current dish is calculated as the average of all star ratings. Uer can choose how many stars they want to rate (0-5) and leave reviews of current dish
+in the text bar, after clicking "Submit" button. Ratings and reviews will show up on the bottom of reviews section. Clicking all user profile pictures will direct to "User profile" page. Currently, we only have one user profile, so all profile pictures will direct to the same "dextMePls" profile. In the future, it will be directed to corresponding user profile page.
+
+User Page:
+You can click on "Yummky" logo on the top left of the page to navigate back to home page. You can click on "login" button on top right of the page to navigate to login page. You can click on "sign up" button on top right of the page to navigate to sign up page. You can click on "follow" button beside the userID ("dextMePls") and observe it changing to "following" button. Also notice that the user's followers count increases and the following user is appended into the "followers" tab below. You can navigator through the page by using using the navigation buttons.
+
+A navigation bar at the top of Restaurant, Dish, and User pages will be implemented similarly to what is done in the Home page.
+
+Login Page:
+You can fill in and submit after filling in the email address and password fields. If email is not valid (ex. having no "@"), the webpage will produce an error saying that the email is not valid.
+
+To login as a User:
+Email: 'testUser@gmail.com'
+Password: 'csc309'
+
+To login as an Admin:
+Email: 'testAdmin@gmail.com'
+Password: 'admin'
+
+More rigorous User Authentication is planned to be incorporated during front and back-end integration. If the user authentication is successful, they will be directed to the Home Page. 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	 	<meta charset="utf-8">
+	    <title>User Profile</title>
+	    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	    <script src="../controllers/user.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../styles/user.css">
+	    <link rel="stylesheet" type="text/css" href="../styles/navbar.css">
+	</head>
+
+ 	<body ng-app="webApp" ng-controller="userProfileController" class="greyBackground">
+		<div class="container-fluid centerAlign" id="topOfPageContainer">
+	        <div class="row" id="topOfPageRow">
+	            <a href='/'>
+					<img src="../images/logo.jpg" class="rounded" id="yumLogo" alt="Cinque Terre">
+				</a>
+	            <div class="col-sm-8" id="topOfPageForm">
+	                <form>
+	                    <input type="text" class="btn text-left" placeholder="Search" ng-model="searchForm.query">
+	                    <input type="submit" class="btn btn-outline-success whiteBackground" id="searchButton" value="Search" ng-click="search()">
+	                </form>
+	            </div>
+
+	            <div class="col-sm-2" id="loginSignUp" ng-if="!loggedIn">
+					<a href="/login" class="btn btn-outline-info font2 whiteBackground">Login</a>
+					<a href="/signup" class="btn btn-outline-info font2 whiteBackground">Sign Up</a>
+				</div>
+				<div class="col-sm-2" id="imageIcon" ng-if="loggedIn">
+					<a href="/users/{{user._id}}"><img src="../{{user.image}}" class="icon blackBorder"></img></a>
+					<a href="/logout" class="btn btn-outline-info font2 whiteBackground">Logout</a>
+				</div>
+			</div>
+		</div>
+
+    	<div class="container-fluid greyGradientBackground">
+        	<div class="row" id="userInfoRow">
+            	<img src="../{{viewedUser.image}}" id="profilePic" class="rounded-circle userImage" alt="Cinque Terre">
+            	<div class="col-sm-10">
+                	<h3 class="userID">
+                    	{{viewedUser.userID}}
+                    	<button class="btn btn-success" id="followButton" ng-if="isFollowing && loggedIn" ng-click="unfollow()"><i class="fa fa-check"></i> Following</button>
+                    	<button class="btn btn-primary" id="followButton" ng-if="!isFollowing && loggedIn" ng-click="follow()"> Follow</button>
+                	</h3>
+                	<h5><b>Name:</b> <span>{{viewedUser.name}}</span></h5>
+                	<h5><b>Location:</b> <span>{{viewedUser.location}}</span></h5>
+                	<h5><b>Phone Number:</b> <span>{{viewedUser.phoneNum}}</span></h5>
+                	<h5><b>Email:</b> <span>{{viewedUser.email}}</span></h5>
+                	<h5><b>About Me:</b> <span>{{viewedUser.aboutMe}}</span></h5>
+            	</div>
+        	</div>
+    	</div>
+
+    	<div class="container centerAlign" id="userStats">
+        	<table class="table table-bordered whiteBackgroud">
+            	<thead>
+                	<tr>
+						<th>Dish Reviews #</th>
+						<th>Restaurant Reviews #</th>
+	                	<th>Followers #</th>
+	                	<th>Following Users #</th>
+	                	<th>Following Restaurants #</th>
+                	</tr>
+            	</thead>
+            	<tbody>
+                	<tr>
+						<td>{{viewedUser.dishReviews.length}}</td>
+						<td>{{viewedUser.restaurantReviews.length}}</td>
+		                <td>{{viewedUser.followers.length}}</td>
+		                <td>{{viewedUser.following.length}}</td>
+		                <td>{{viewedUser.restaurantsFollowing.length}}</td>
+                	</tr>
+            	</tbody>
+        	</table>
+    	</div>
+
+    	<div class="container centerAlign" id="navigationButtonContainer">
+        	<div class="btn-group btn-group-lg whiteBackgroud">
+	            <a href="#foodReviewContainer" class="btn btn-outline-primary font2 orangeButton">Food Reviews</a>
+	            <a href="#restaurantReviewContainer" class="btn btn-outline-primary font2 orangeButton">Restaurant Reviews</a>
+	            <a href="#followersContainer" class="btn btn-outline-primary font2 orangeButton">Followers</a>
+	            <a href="#followingUsersContainer" class="btn btn-outline-primary font2 orangeButton">Following Users</a>
+	            <a href="#followingRestaurantsContainer" class="btn btn-outline-primary font2 orangeButton">Following Restaurants</a>
+        	</div>
+    	</div>
+
+    	<div class="container" id="foodReviewContainer">
+			<h2 class="font1">Dish Reviews by <span class="font2">{{viewedUser.userID}}</span></h2>
+			<div ng-if="!(viewedUser.dishReviews.length>0)"><h3 class="font2">No Dish Reviews</h3></div>
+        	<div class="media border p-3 whiteBackgroud" ng-repeat="dishReview in viewedUser.dishReviews">
+            	<a href="/dishes/{{dishReview.dish._id}}"><img src="../{{dishReview.dish.image}}" class="mr-3 mt-1 rounded-circle images"></a>
+            	<div class="media-body">
+                	<h4><b>{{dishReview.dish.name}} </b><small class="restaurantName"><i>{{dishReview.restaurant.name}}</i></small><small class="date"><i>Posted on {{convertDate(dishReview.date)}}</i></small></h4>
+                	<div>
+                    	<span class="fa fa-star {{$index <= dishReview.rating - 1 ? 'checked' : ''}}" ng-repeat="star in [].constructor(5) track by $index"></span>
+                	</div>
+                	<p>{{dishReview.comment}}</p>
+            	</div>
+        	</div>
+    	</div>
+
+    	<div class="container" id="restaurantReviewContainer">
+			<h2 class="font1">Restaurant Reviews by <span class="font2">{{viewedUser.userID}}</span></h2>
+			<div ng-if="!(viewedUser.restaurantReviews.length>0)"><h3 class="font2">No Restaurant Reviews</h3></div>
+        	<div class="media border p-3 whiteBackgroud" ng-repeat="restaurantReview in viewedUser.restaurantReviews">
+            	<a href="/restaurants/{{restaurantReview.restaurant._id}}"><img src="../{{restaurantReview.restaurant.logo}}" class="mr-3 mt-3 rounded-circle imagesRest"></a>
+            	<div class="media-body">
+                	<h4><b>{{restaurantReview.restaurant.name}} </b><small class="date"><i>Posted on {{convertDate(restaurantReview.date)}}</i></small></h4>
+                	<div>
+                    	<span class="fa fa-star {{$index <= restaurantReview.rating - 1 ? 'checked' : ''}}" ng-repeat="star in [].constructor(5) track by $index"></span>
+                	</div>
+                	<p>{{restaurantReview.comment}}</p>
+            	</div>
+        	</div>
+    	</div>
+
+    	<div class="container" id="followersContainer">
+			<h2 class="font1">Followers of <span class="font2">{{viewedUser.userID}}</span></h2>
+			<div ng-if="!(viewedUser.followers.length>0)"><h3 class="font2">No Followers</h3></div>
+        	<div class="centerAlign inlineIcons" ng-repeat="follower in viewedUser.followers">
+            	<a href="/users/{{follower._id}}"><img src="../{{follower.image}}" class="mr-3 mt-3 rounded-circle images followingImageAlign"></a>
+            	<div>{{follower.userID}}</div>
+        	</div>
+    	</div>
+
+    	<div class="container" id="followingUsersContainer">
+			<h2 class="font1">Users Followed by <span class="font2">{{viewedUser.userID}}</span></h2>
+			<div ng-if="!(viewedUser.following.length>0)"><h3 class="font2">Not Following Anyone</h3></div>
+        	<div class="centerAlign inlineIcons" ng-repeat="followingUser in viewedUser.following">
+            	<a href="/users/{{followingUser._id}}"><img src="../{{followingUser.image}}" class="mr-3 mt-3 rounded-circle images followingImageAlign"></a>
+            	<div>{{followingUser.userID}}</div>
+        	</div>
+    	</div>
+
+    	<div class="container" id="followingRestaurantsContainer">
+			<h2 class="font1">Restaurants Followed by <span class="font2">{{viewedUser.userID}}</span></h2>
+			<div ng-if="!(viewedUser.restaurantsFollowing.length>0)"><h3 class="font2">Not Following Any Restaurant</h3></div>
+        	<div class="centerAlign inlineIcons" ng-repeat="followingRestaurant in viewedUser.restaurantsFollowing">
+            	<a href="/restaurants/{{followingRestaurant._id}}"><img src="../{{followingRestaurant.logo}}" class="mr-3 mt-3 rounded-circle imagesRest followingImageAlign"></a>
+            	<div>{{followingRestaurant.name}}</div>
+        	</div>
+    	</div>
+ 	</body>
+</html>

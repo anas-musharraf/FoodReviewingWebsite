@@ -1,0 +1,149 @@
+#topOfPageContainer{
+    border-bottom: 1px solid grey;
+}
+
+#topOfPageRow{
+    margin-left: 10px;
+}
+
+#topOfPageForm{
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+
+#loginSignUp{
+    padding-top: 17px;
+}
+
+#topOfPageContainer{
+    background: orange;
+}
+
+#yumLogo{
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+.whiteBackground{
+    background-color: white;
+}
+
+.greyGradientBackground{
+    background-image: linear-gradient(white, #F5F5F5);
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.greyBackground{
+    background-color: #F5F5F5;
+}
+.whiteBackgroud{
+    background-color: white;
+}
+
+.orangeButton{
+    color: orangered;
+    border: 1px solid darkorange;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.orangeButton:hover {
+    background-color: orange; /* Green */
+    border: 1px solid orange;
+    color: white;
+}
+
+.inlineIcons{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+
+#navigationButtonContainer{
+    margin-top: 20px;
+    margin-left: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
+#usersContainer{
+    margin-top: 20px;
+    margin-left: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
+#restaurantsContainer{
+    margin-top: 20px;
+    margin-left: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.centerAlign{
+    text-align: center;
+}
+
+.font1 {
+    font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.font2 {
+    font-family: 'Questrial', sans-serif;
+}
+
+.date{
+    float:right;
+}
+
+.restaurantName{
+    margin-left: 5px;
+}
+
+.images{
+    width:60px;
+}
+
+.userID{
+    border-bottom: 1px solid grey; 
+    font-family: 'Questrial', sans-serif;
+    margin-bottom: 10px;
+}
+
+.checked {
+    color: orange;
+}
+
+.mediaBody {
+    float:right;
+}
+
+h5{
+    font-family: 'Questrial', sans-serif;
+    margin: 5px 20px;
+}
+
+h5 b{
+    color: grey;
+}
+
+i{
+    color:grey;
+}
+
+input[type=text] {
+    width: 75%;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-family: 'Questrial', sans-serif;
+}
+
+input[type=submit] {
+    font-family: 'Questrial', sans-serif;
+    margin-top: 10px;
+}

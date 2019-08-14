@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Search Page</title>
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="search.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="search.js"></script>
+	</head>
+	<body ng-app="webApp" ng-controller="searchController">
+		<div class="container centerAlign font awayFromTop">
+			<a href="/">
+				<img src="images/logo.jpg" id="yumLogo" class="rounded" alt="Cinque Terre">
+			</a>
+			<div class="centerAlign awayFromTop2">
+				<form>
+					<input type="text" class="btn text-left" placeholder="Search for a dish or restaurant..." ng-model="form.query">
+					<button class="btn btn-outline-success" ng-click="getRestaurants()">Search</button>
+				</form>
+			</div>
+			<div class="centerAlign awayFromTop3" ng-if="!loggedIn">
+				<a href="/login" class="btn btn-outline-info">Login</a>
+				<a href="/signup" class="btn btn-outline-info">Sign Up</a>
+			</div>
+			<h4 class="centerAlign awayFromTop3" ng-if="loggedIn">
+				Welcome <a href='/users/{{user._id}}'>{{user.name}}</a>! <a ng-if="user.role === 'Admin'" href='/admin'>Go to admin page</a>
+			</h4>
+		</div>
+		<div class="container restaurants" id="restaurantReviewContainer" ng-if="restaurantResults.length > 0">
+			<h2 class="font1">Restaurants </h2>
+			<div class="media border p-3 result" ng-repeat="restaurant in restaurantResults">
+				<img src="../{{restaurant.logo}}" alt="dextMePls" class="mr-3 mt-3 rounded-circle images">
+				<div class="media-body">
+					<h4><b><a href="/restaurants/{{restaurant._id}}">{{restaurant.name}} </a></b></h4>
+					<div>
+					   <span class="fa fa-star {{$index <= getAverageRating(restaurant.reviews) - 1 ? 'checked' : ''}} star" ng-repeat="star in [].constructor(5) track by $index"></span>
+					</div>
+					<p>{{restaurant.reviews.length}} reviews</p>
+					<p>{{restaurant.followers.length}} Followers</p>
+				</div>
+			</div>
+		</div>
+		<div class="container restaurants" id="restaurantReviewContainer" ng-if="dishResults.length > 0">
+			<h2 class="font1">Dishes </h2>
+			<div class="media border p-3 result" ng-repeat="dish in dishResults">
+				<img src="../{{dish.image}}" alt="dextMePls" class="mr-3 mt-3 rounded-circle images">
+				<div class="media-body">
+					<h4><b><a href="/dishes/{{dish._id}}">{{dish.name}} </a></b></h4>
+					<div>
+					   <span class="fa fa-star {{$index <= getAverageRating(dish.reviews) - 1 ? 'checked' : ''}} star" ng-repeat="star in [].constructor(5) track by $index"></span>
+					</div>
+					<p>${{dish.price}}</p>
+					<p>{{dish.reviews.length}} reviews</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

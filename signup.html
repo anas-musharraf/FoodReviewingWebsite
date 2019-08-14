@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="controllers/signup.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/signup.css">
+    <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+ </head>
+
+ <body>
+
+    <div class="container-fluid centerAlign">
+        <br>
+         <h1 class="font1">Sign Up</h1><br>
+    </div>
+    <div class="container font awayFromTop2">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
+        </div>
+        <div class="form-group">
+            <label for="pwdConfirmed">Confirm Password:</label>
+            <input type="password" class="form-control" id="pwdConfirmed" placeholder="Confirm password" name="pwdConfirmed" required>
+        </div>
+        <button type="submit" id="initialSubmit" class="btn btn-outline-info" onclick="showRest()">Submit</button>
+        <br><br>
+        <p>Already have an account? <a href="/login">Log In</a></p>
+        <table id="hiddenTable" width="80%">
+            <colgroup>
+                <col width="20%">
+                <col width="80%">
+            </colgroup>
+            <tr>
+                <td height="60"><label for="userName">Username:</label></td>
+                <td height="60"><input  class="hidden userName" id="userName" placeholder="Create Username" name="userName" required></td>
+            </tr>
+            <tr>
+                <td height="60"><label for="Name">Name:</label></td>
+                <td height="60"><input  class="hidden userName" id="Name" placeholder="Enter your name" name="Name" required></td>
+            </tr>
+            <tr>
+                <td height="60"><label for="phoneNumber">Phone Number:</label></td>
+                <td height="60"><input class="hidden phoneNumber" id="phoneNumber" placeholder="Insert Phone Number" name="phoneNumber" type="number" maxlength="10" minlength="10" required></td>
+            </tr>
+            <tr>
+                <td height="60"><label for="Location">Location:</label></td>
+                <td height="60"><input  class="hidden location" id="location" placeholder="Insert Location" name="location" required></td>
+            </tr>
+            <tr>
+                <td height="60"><label for="aboutMe">About Me:</label></td>
+                <td height="60"><textarea id="aboutMe" class="hidden aboutMe"></textarea></td>
+            </tr>
+            <tr>
+                <td height="60"><button type="submit" id="Submit" class="btn btn-outline-info" onclick="newEntry()">Submit</button></td>
+            </tr>
+        </table>
+		<!-- comments -->
+    </div>
+
+ </body>
+</html>

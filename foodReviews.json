@@ -1,0 +1,24 @@
+[{
+    "name": "Miso Ramen",
+    "restaurant": "Kinton Ramen",
+    "rating": 1,
+    "img": "images/ramen.jpg",
+    "date": "November 5, 2018",
+    "comment": "FAKE. RAMEN. If you are going to waste your money eating ramen in North America, just buy a plane ticket to Japan."
+},
+{
+    "name": "Angus Burger",
+    "restaurant": "McDonald\"s",
+    "rating": 5,
+    "img": "images/angus.jpg",
+    "date": "October 15, 2018",
+    "comment": "If you would like to get heartattck in near future, this burger will be perfect for you."
+},
+{
+    "name": "A5 Kobe Ribeye Steak",
+    "restaurant": "Jacobs & Co. Steakhouse",
+    "rating": 2,
+    "img": "images/steak.jpg",
+    "date": "October 9, 2018",
+    "comment": "880 dollars for 16ox Ribeye Steak. Now I am sturggling to pay my rent. Totally worth it."
+}]

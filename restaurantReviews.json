@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Kinton Ramen",
+        "rating": 1,
+        "img": "images/kinton.jpeg",
+        "date": "November 5, 2018",
+        "comment": "Their chefs should all go on a trip to Japan to learn how to make REAL ramen.",
+    },
+    {
+        "name": "McDonald\"s",
+        "rating": 2,
+        "img": "images/md.png",
+        "date": "October 15, 2018",
+        "comment": "I thought fast food was suppose to be cheap. Like I shouldn\"t be spending more than $10-12 on a meal. But I always go over $15.",
+    },
+    {
+        "name": "Jacobs & Co. Steakhouse",
+        "rating": 2,
+        "img": "images/js.jpeg",
+        "date": "October 9, 2018",
+        "comment": "Ridiculous price on menus. I wonder if they wrote calories instead of price.",
+    }
+]

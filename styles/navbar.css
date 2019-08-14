@@ -1,0 +1,55 @@
+#topOfPageContainer{
+    border-bottom: 1px solid grey;
+}
+
+#topOfPageRow{
+    margin-left: 10px;
+}
+
+#topOfPageForm{
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+
+#loginSignUp{
+    padding-top: 17px;
+}
+
+#imageIcon {
+	padding-top: 10px;
+}
+
+#yumLogo{
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+#iconImage {
+	margin-bottom: 5px;
+}
+
+input[type=text] {
+    width: 75%;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-family: 'Questrial', sans-serif;
+}
+
+input[type=submit] {
+    font-family: 'Questrial', sans-serif;
+    margin-top: 10px;
+}
+
+.blackBorder{
+    border: 1px solid black;
+}
+
+.icon {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}

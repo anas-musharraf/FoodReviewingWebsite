@@ -1,0 +1,14 @@
+You can view our website at the following link:
+
+https://calm-crag-82245.herokuapp.com/
+
+
+Please refer to the phase2.pdf for the user instruction
+
+User login:dexter@gmail.com
+Password: password
+
+Admin login:cyang@gmail.com
+Password: password
+
+

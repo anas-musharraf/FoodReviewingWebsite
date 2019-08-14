@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	 	<meta charset="utf-8">
+	    <title>dishView</title>
+	    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="../controllers/dish.js"></script>
+		<link rel="stylesheet" type="text/css" href="../styles/dish.css">
+		<link rel="stylesheet" type="text/css" href="../styles/navbar.css">
+	</head>
+
+	<body ng-app="webApp" ng-controller="dishController" class="greyBackground">
+		<div class="container-fluid centerAlign" id="topOfPageContainer">
+	        <div class="row" id="topOfPageRow">
+	            <a href='/'>
+					<img src="../images/logo.jpg" class="rounded" id="yumLogo" alt="Cinque Terre">
+				</a>
+	            <div class="col-sm-8" id="topOfPageForm">
+	                <form>
+	                    <input type="text" class="btn text-left" placeholder="Search" ng-model="searchForm.query">
+	                    <input type="submit" class="btn btn-outline-success whiteBackground" id="searchButton" value="Search" ng-click="search()">
+	                </form>
+	            </div>
+
+	            <div class="col-sm-2" id="loginSignUp" ng-if="!loggedIn">
+					<a href="/login" class="btn btn-outline-info font2 whiteBackground">Login</a>
+					<a href="/signup" class="btn btn-outline-info font2 whiteBackground">Sign Up</a>
+				</div>
+				<div class="col-sm-2" id="imageIcon" ng-if="loggedIn">
+					<a href="/users/{{user._id}}"><img src="../{{user.image}}" class="icon blackBorder"></img></a>
+					<a href="/logout" class="btn btn-outline-info font2 whiteBackground">Logout</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row" id="dishInfoRow">
+				<img src="../{{dishes.image}}" id= "dishImage" class="rounded-circle dishImage blackBorder" alt="Cinque Terre">
+				<div class="col-sm-6" id = "dishInfo">
+
+					<div id="dishName" >
+						<h3>{{dishes.name}}</h3>
+					</div>
+					<div class="rating">
+						<span class="fa fa-star {{$index <= getAverageRating() - 1 ? 'checked' : ''}} star" ng-repeat="star in [].constructor(5) track by $index"></span>
+						{{dishes.reviews.length}} {{dishes.reviews.length == 1 ? 'Review' : 'Reviews'}}
+					</div>
+
+					<h5><b class="ingredInfoList">Price:</b> <span>{{dishes.price}}</span></h5>
+					<h6><a href=/restaurants/{{dishes.restaurant}} class="font2" id="linkBackToRestPage">Back to Restaurant Page</a></h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="info">
+           <h2 class="font1" id="Reviews">Dish Reviews</h2>
+		   <div class="rating">
+               <span class="fa fa-star {{$index <= getAverageRating() - 1 ? 'checked' : ''}} star" ng-repeat="star in [].constructor(5) track by $index"></span>
+			   {{dishes.reviews.length}} {{dishes.reviews.length == 1 ? 'Review' : 'Reviews'}}
+		   </div>
+           <div class="media border p-3 whiteBackground" ng-repeat="review in dishes.reviews">
+               <a href="/users/{{review.user._id}}"><img src="../{{review.user.image}}" alt="dextMePls" class="mr-3 mt-1 rounded-circle images blackBorder"></a>
+               <div class="media-body">
+                   <h4><b>{{review.user.name}} </b><small class="date"><i>Posted on {{convertDate(review.date)}}</i></small></h4>
+                   <div>
+                       <span class="fa fa-star {{$index <= review.rating - 1 ? 'checked' : ''}} star" ng-repeat="star in [].constructor(5) track by $index"></span>
+                   </div>
+				   <p>{{review.comment}}</p>
+				   <button class="removeButton" ng-click="removeReview(review._id)" ng-if="user.role === 'Admin'">Remove Review</button>
+               </div>
+           </div>
+        </div>
+
+
+		<div class="info" ng-if="!loggedIn">
+			<h2 class="font1">Log in to leave your review of <span class="font2">{{dishes.name}}</span></h2>
+		</div>
+
+		<div ng-if="!reviewedDish">
+			<div class="info" ng-if="loggedIn">
+		        <h2 class="font1">Leave your review of <span class="font2">{{dishes.name}}</span></h2>
+		        <div class="media border p-3">
+		            <a href="/users/{{user._id}}"><img src="../{{user.image}}"  class="mr-3 mt-3 rounded-circle images blackBorder"></a>
+		            <div class="media-body">
+		                <h4> <b>{{user.name}}</b></h4>
+						<div>
+							<span>Click here for rating: </span>
+		                    <span class="fa fa-star {{$index <= userRating - 1 ? 'checked' : ''}} star" ng-repeat="star in [].constructor(5) track by $index" ng-click="changeRating($index)"></span>
+						</div>
+	                   <input type="text" class="btn text-left" placeholder="Please leave your reviews ..."  ng-model="formData.userComment">
+	                   <button class="btn btn-outline-info whiteBackground" ng-click="submitReview()">Submit</button>
+		            </div>
+		        </div>
+			</div>
+		</div>
+
+	</body>
+</html>

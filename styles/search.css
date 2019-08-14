@@ -1,0 +1,50 @@
+.awayFromTop{
+    margin-top: 25px;
+}
+
+.awayFromTop2{
+    margin-top: 25px;
+}
+
+.awayFromTop3{
+    margin-top: 10px;
+}
+
+.centerAlign{
+    text-align: center;
+}
+
+.font{
+    font-family: 'Questrial', sans-serif;
+}
+
+.restaurants {
+	margin-top: 20px;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.mr-3 {
+	height: 100px;
+	width: 100px;
+}
+
+.checked {
+	color: orange;
+}
+
+#yumLogo{
+    width: 400px;
+    height: 100px;
+}
+
+input[type=text] {
+    width: 75%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-family: 'Questrial', sans-serif;
+}

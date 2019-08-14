@@ -1,0 +1,515 @@
+[{
+		"name": "McDonald's",
+		"numOfFollowers": 1421,
+		"pricing": "$",
+		"bannerImage": "images/mcdonalds.jpg",
+		"dishes": [{
+				"name": "Angus Burger",
+				"rating": 4,
+				"price": 11.25,
+				"numOfReviews": 3,
+				"image": "images/angus.png"
+			},
+			{
+				"name": "McChicken",
+				"rating": 3,
+				"price": 8.50,
+				"numOfReviews": 2,
+				"image": "images/mcchicken.png"
+			},
+			{
+				"name": "McNuggets",
+				"rating": 5,
+				"price": 5.00,
+				"numOfReviews": 8,
+				"image": "images/mcnuggets.png"
+			},
+			{
+				"name": "Big Mac",
+				"rating": 5,
+				"price": 8.99,
+				"numOfReviews": 12,
+				"image": "images/bigmac.png"
+			},
+			{
+				"name": "Fries",
+				"rating": 5,
+				"price": 1.99,
+				"numOfReviews": 9,
+				"image": "images/fries.png"
+			},
+			{
+				"name": "Poutine",
+				"rating": 1,
+				"price": 4.99,
+				"numOfReviews": 15,
+				"image": "images/poutine.png"
+			},
+			{
+				"name": "Filet-O-Fish",
+				"rating": 3,
+				"price": 7.99,
+				"numOfReviews": 9,
+				"image": "images/filet-o-fish.png"
+			},
+			{
+				"name": "Quarter Pounder",
+				"rating": 3,
+				"price": 6.99,
+				"numOfReviews": 7,
+				"image": "images/quarterpounder.png"
+			}
+		],
+		"reviews": [{
+				"username": "dextMePls",
+				"userImage": "images/user1.jpg",
+				"comment": "I thought fast food was suppose to be cheap. Like I shouldn\"t be spending more than $10-12 on a meal. But I always go over $15.",
+				"rating": 2,
+				"date": "November 6, 2018",
+				"commentID": "1"
+			},
+			{
+				"username": "gavinKing101",
+				"userImage": "images/user3.jpg",
+				"comment": "Delicious food for cheap prices. I\"m loving it!",
+				"rating": 4,
+				"date": "November 3, 2018",
+				"commentID": "2"
+			},
+			{
+				"username": "anasSus",
+				"userImage": "images/user4.jpg",
+				"comment": "Food is not Halal, but the Filet-O-Fish is blessed!",
+				"rating": 4,
+				"date": "November 1, 2018",
+				"commentID": "3"
+			}
+		],
+		"images": [
+			"images/mcdonalds_inside_1.jpg",
+			"images/mcdonalds_inside_2.jpg",
+			"images/mcdonalds_inside_3.jpg",
+			"images/mcdonalds_inside_4.jpg",
+			"images/mcdonalds_inside_5.jpg",
+			"images/mcdonalds_inside_6.jpg"
+		],
+		"aboutUs": "In 1954, an enterprising salesman named Ray Kroc discovered a small burger restaurant in California, and wrote the first page of McDonald’s® history. In 1967, the first McDonald’s Canada opened in Richmond, B.C. We’ve been growing with our communities and serving quality food at great value ever since. Today, McDonald’ s Canada is proud to be one of the world’ s leading foodservice retailers.From coast to coast, we serve delicious choices to more than 2.5 million people in over 1, 400 locations every day.We’ re also more than just your local restaurant.We’ re hardworking small - business men and women, students working part - time, seniors getting the most out of life, and volunteers lending time to make a difference in the communities we live and work in .Learn more about us.",
+		"businessHours": "Mon-Fri 7AM - 11PM\nSat 8AM - 10PM\nSun 9AM - 9PM",
+		"contact": {
+			"phone": "416-862-8899",
+			"email": "service@mcdonalds.com",
+			"location": "123 Yonge Street",
+			"twitter": "McDonalds"
+		}
+	},
+	{
+		"name": "Subway",
+		"numOfFollowers": 1689,
+		"pricing": "$",
+		"bannerImage": "images/Subway.jpg",
+		"dishes": [{
+				"name": "Black Ham",
+				"rating": 3,
+				"price": 9.45,
+				"numOfReviews": 5,
+				"image": " images/blackforestham.png "
+			},
+			{
+				"name": "Chicken Bacon",
+				"rating": 3,
+				"price": 9.50,
+				"numOfReviews": 3,
+				"image": " images/chickenranch.png "
+			},
+			{
+				"name": "B.M.T",
+				"rating": 4,
+				"price": 8.00,
+				"numOfReviews": 7,
+				"image": " images/italianbmt.png "
+			},
+			{
+				"name": "Meatball",
+				"rating": 4,
+				"price": 6.99,
+				"numOfReviews": 7,
+				"image": " images/meatball.png "
+			},
+			{
+				"name": "Roast Chciken",
+				"rating": 4,
+				"price": 8.99,
+				"numOfReviews": 7,
+				"image": " images/ovenchicken.png "
+			},
+			{
+				"name": "Roast Beef",
+				"rating": 2,
+				"price": 9.99,
+				"numOfReviews": 6,
+				"image": " images/roastbeef.png "
+			},
+			{
+				"name": "Steak",
+				"rating": 4,
+				"price": 9.99,
+				"numOfReviews": 6,
+				"image": " images/steakcheese.png "
+			},
+			{
+				"name": "Spicy Italian",
+				"rating": 4,
+				"price": 7.99,
+				"numOfReviews": 2,
+				"image": " images/spicyitalian.png "
+			}
+		],
+		"reviews": [{
+				"username": "dextMePls",
+				"userImage": "images/user1.jpg",
+				"comment": "My mom always tells to eat healthy food like this",
+				"rating": 3,
+				"date": "November 7, 2018",
+				"commentID": "4"
+			},
+			{
+				"username": "gavinKing101",
+				"userImage": "images/user3.jpg",
+				"comment": "Best choice for breakfast",
+				"rating": 4,
+				"date": "November 5, 2018",
+				"commentID": "5"
+			},
+			{
+				"username": "anasSus",
+				"userImage": "images/user4.jpg",
+				"comment": "Healthy choice!!!",
+				"rating": 4,
+				"date": "November 9, 2018",
+				"commentID": "6"
+			}
+		],
+		"images": [
+			"images/subway_inside_1.jpg",
+			"images/subway_inside_2.jpg",
+			"images/subway_inside_3.jpg",
+			"images/subway_inside_4.jpg",
+			"images/subway_inside_5.jpg",
+			"images/subway_inside_6.jpg"
+		],
+		"aboutUs": " Subway is an American privately held fast food restaurant franchise that primarily sells submarine sandwiches (subs) and salads. Subway is one of the fastest-growing franchises in the world and, as of June 2017, has approximately 42,000 stores located in more than 100 countries. More than half of the stores are located in the United States. It is the largest single-brand restaurant chain, and the largest restaurant operator, in the world",
+		"businessHours": "Mon-Fri 6AM - 11PM\nSat 9AM -5PM\nSun 9AM - 1PM",
+		"contact": {
+			"phone": "416-342-1248",
+			"email": "service@subway.com",
+			"location": "146 Yonge Street",
+			"twitter": "Subway"
+		}
+	},
+	{
+		"name": "KFC",
+		"numOfFollowers": 1327,
+		"pricing": "$$",
+		"bannerImage": "images/kfc.png",
+		"dishes": [{
+				"name": "Spicy Colonel's",
+				"rating": 5,
+				"price": 10.45,
+				"numOfReviews": 1,
+				"image": "images/spicycolonel.jpg"
+			},
+			{
+				"name": "BIG Cruncch",
+				"rating": 4,
+				"price": 9.75,
+				"numOfReviews": 4,
+				"image": "images/bigcrunch.jpg"
+			},
+			{
+				"name": "Twister",
+				"rating": 4,
+				"price": 4.50,
+				"numOfReviews": 6,
+				"image": "images/twister.jpg"
+			},
+			{
+				"name": "Zinger",
+				"rating": 4,
+				"price": 9.49,
+				"numOfReviews": 6,
+				"image": "images/zinger.jpg"
+			},
+			{
+				"name": "Mixed Bucket",
+				"rating": 4,
+				"price": 19.99,
+				"numOfReviews": 9,
+				"image": "images/mixedbucketmeal.jpg"
+			},
+			{
+				"name": "Boneless Box",
+				"rating": 5,
+				"price": 15.99,
+				"numOfReviews": 5,
+				"image": "images/bonelessmeal.jpg"
+			},
+			{
+				"name": "Chicken Meal",
+				"rating": 4,
+				"price": 9.99,
+				"numOfReviews": 2,
+				"image": "images/chickenmeal.jpg"
+			},
+			{
+				"name": "Popcorn Chicken",
+				"rating": 4,
+				"price": 8.99,
+				"numOfReviews": 5,
+				"image": "images/popcornchicken.jpg"
+			}
+		],
+		"reviews": [{
+				"username": "dextMePls",
+				"userImage": "images/user1.jpg",
+				"comment": "Always come here when I am feeling down.",
+				"rating": 4,
+				"date": "November 8, 2018",
+				"commentID": "7"
+			},
+			{
+				"username": "gavinKing101",
+				"userImage": "images/user3.jpg",
+				"comment": "My favorite chicken place",
+				"rating": 5,
+				"date": "November 5, 2018",
+				"commentID": "8"
+			},
+			{
+				"username": "anasSus",
+				"userImage": "images/user4.jpg",
+				"comment": "Fried Chicken Forever",
+				"rating": 4,
+				"date": "November 2, 2018",
+				"commentID": "9"
+			}
+		],
+		"images": [
+			"images/kfc_inside_1.jpg",
+			"images/kfc_inside_2.jpg",
+			"images/kfc_inside_3.jpg",
+			"images/kfc_inside_4.jpg",
+			"images/kfc_inside_5.jpg",
+			"images/kfc_inside_6.jpg"
+		],
+		"aboutUs": "KFC, also known as Kentucky Fried Chicken, is an American fast food restaurant chain that specializes in fried chicken. Headquartered in Louisville, Kentucky, it is the world's second-largest restaurant chain (as measured by sales) after McDonald's, with almost 20,000 locations globally in 123 countries and territories as of December 2015. The chain is a subsidiary of Yum! Brands, a restaurant company that also owns the Pizza Hut, Taco Bell, and WingStreet chains",
+		"businessHours": "Mon-Fri 9AM - 10PM\nSat 9AM - 10PM\nSun 10AM - 9PM",
+		"contact": {
+			"phone": "416-623-8309",
+			"email": "service@kfc.com",
+			"location": "234 Yonge Street",
+			"twitter": "KFC"
+		}
+	},
+	{
+		"name": "A&W",
+		"numOfFollowers": 1275,
+		"pricing": "$$",
+		"bannerImage": "images/a&w.jpg",
+		"dishes": [{
+				"name": "Teen Burger",
+				"rating": 3,
+				"price": 7.45,
+				"numOfReviews": 4,
+				"image": "images/teenburger.jpg"
+			},
+			{
+				"name": "Mama Burger",
+				"rating": 2,
+				"price": 4.50,
+				"numOfReviews": 4,
+				"image": " images/mamaburger.jpg "
+			},
+			{
+				"name": "Mozza Burger",
+				"rating": 3,
+				"price": 6.00,
+				"numOfReviews": 7,
+				"image": " images/mozzaburger.jpg "
+			},
+			{
+				"name": "Bacon Eggs",
+				"rating": 4,
+				"price": 9.99,
+				"numOfReviews": 8,
+				"image": " images/baconeggs.jpg "
+			},
+			{
+				"name": "Chubby Chicken",
+				"rating": 2,
+				"price": 5.99,
+				"numOfReviews": 6,
+				"image": " images/chubbychicken.jpg "
+			},
+			{
+				"name": "Double Teen",
+				"rating": 5,
+				"price": 9.99,
+				"numOfReviews": 6,
+				"image": " images/doubleteen.jpg "
+			},
+			{
+				"name": "Double Mozza",
+				"rating": 5,
+				"price": 10.99,
+				"numOfReviews": 4,
+				"image": " images/doublemozza.jpg "
+			}
+		],
+		"reviews": [{
+				"username": "dextMePls",
+				"userImage": "images/user1.jpg",
+				"comment": "Cheap & Fast, but not tasty",
+				"rating": 2,
+				"date": "November 7, 2018",
+				"commentID": "10"
+			},
+			{
+				"username": "gavinKing101",
+				"userImage": "images/user3.jpg",
+				"comment": "just Ok food, cheap price",
+				"rating": 3,
+				"date": "November 5, 2018",
+				"commentID": "11"
+			},
+			{
+				"username": "anasSus",
+				"userImage": "images/user4.jpg",
+				"comment": "I like their salad a lot",
+				"rating": 4,
+				"date": "November 2, 2018",
+				"commentID": "12"
+			}
+		],
+		"images": [
+			"images/a&w_inside_1.jpg",
+			"images/a&w_inside_2.jpg",
+			"images/a&w_inside_3.jpg",
+			"images/a&w_inside_4.jpg",
+			"images/a&w_inside_5.jpg",
+			"images/a&w_inside_6.jpg"
+		],
+		"aboutUs": " A&W Food Services of Canada, Inc. is a Canadian fast food restaurant chain. The chain was originally part of the U.S.-based A&W Restaurants chain, but was sold to Unilever in 1972, and then bought by its management in 1995. It no longer has any corporate connection to A&W operations outside of Canada.",
+		"businessHours": "Mon-Fri 8AM - 10PM\nSat 9AM - 10PM\nSun 10AM - 9PM",
+		"contact": {
+			"phone": "416-342-45979",
+			"email": "service@a&w.com",
+			"location": "1843Yonge Street",
+			"twitter": "A&W"
+		}
+	},
+	{
+		"name": "Wendy's",
+		"numOfFollowers": 1241,
+		"pricing": "$",
+		"bannerImage": "images/wendys.jpg",
+		"dishes": [{
+				"name": "Dave’s Single",
+				"rating": 3,
+				"price": 8.25,
+				"numOfReviews": 4,
+				"image": " images/davesingle.jpg "
+			},
+			{
+				"name": "Dave’s Double",
+				"rating": 4,
+				"price": 10.50,
+				"numOfReviews": 4,
+				"image": " images/davesdouble.jpg "
+			},
+			{
+				"name": "Baconator",
+				"rating": 4,
+				"price": 9.50,
+				"numOfReviews": 5,
+				"image": " images/baconator.jpg "
+
+			},
+			{
+				"name": "Cheesy Cheddar",
+				"rating": 5,
+				"price": 4.99,
+				"numOfReviews": 7,
+				"image": " images/cheesycheddar.jpg "
+			},
+			{
+				"name": "Spicy Chicken",
+				"rating": 4,
+				"price": 7.99,
+				"numOfReviews": 4,
+				"image": " images/spicychicken.jpg "
+			},
+			{
+				"name": "Grilled Chicken",
+				"rating": 4,
+				"price": 8.49,
+				"numOfReviews": 11,
+				"image": " images/grilledchicken.jpg "
+			},
+			{
+				"name": "Chicken Strips",
+				"rating": 3,
+				"price": 5.99,
+				"numOfReviews": 2,
+				"image": " images/chickenstrip.jpg "
+			},
+			{
+				"name": "Spciy Wrap",
+				"rating": 4,
+				"price": 7.49,
+				"numOfReviews": 2,
+				"image": " images/chickenwrap.jpg "
+			}
+		],
+		"reviews": [{
+				"username": "dextMePls",
+				"userImage": "images/user1.jpg",
+				"comment": "Great food, Great Service ",
+				"rating": 4,
+				"date": "November 5, 2018",
+				"commentID": "13"
+			},
+			{
+				"username": "gavinKing101",
+				"userImage": "images/user3.jpg",
+				"comment": "They have so many different drinks",
+				"rating": 3,
+				"date": "November 4, 2018",
+				"commentID": "14"
+			},
+			{
+				"username": "anasSus",
+				"userImage": "images/user4.jpg",
+				"comment": "Only been there once, slow service, long wait time",
+				"rating": 2,
+				"date": "November 2, 2018",
+				"commentID": "15"
+			}
+		],
+		"images": [
+			"images/wendys_inside_1.jpg",
+			"images/wendys_inside_2.jpg",
+			"images/wendys_inside_3.jpg",
+			"images/wendys_inside_4.jpg",
+			"images/wendys_inside_5.jpg",
+			"images/wendys_inside_6.jpg"
+		],
+		"aboutUs": " Wendy's is an American international fast food restaurant chain founded by Dave Thomas on November 15, 1969, in Columbus, Ohio. The company moved its headquarters to Dublin, Ohio, on January 29, 2006. As of 2016, Wendy's was the world's third largest hamburger fast food chain with 6,500+ locations, following Burger King and McDonald's. On April 24, 2008, the company announced a merger with Triarc Companies Inc., a publicly traded company and the parent company of Arby's. Despite the new ownership, Wendy's headquarters remained in Dublin. Previously, Wendy's had rejected more than two buyout offers from Triarc. Following the merger, Triarc became known as Wendy's/Arby's Group, and later as The Wendy's Company.",
+		"businessHours": "Mon-Fri 11AM - 11PM\nSat 11AM - 10PM\nSun 11AM - 8PM",
+		"contact": {
+			"phone": "416-232-3648",
+			"email": "service@wendys.com",
+			"location": "327 Yonge Street",
+			"twitter": "Wendys"
+		}
+	}
+]
